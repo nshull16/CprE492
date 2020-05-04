@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://rawgit.com/unconditional/jquery-table2excel/master/src/jquery.table2excel.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="Product Tracker"
+      content="Product Tracker"
+    />
+    <title>Product TRACkER</title>
+    
+  </head>
+  <script>
+
+    function checkForAdmin()
+    {
+      if(window.localStorage.getItem('isAdmin') === "true")
+      {
+        $('#editProductButton').css("display", "inline-block");
+        $('#addProductButton').css("display", "inline-block");
+        $('#editContractButton').css("display", "inline-block");
+        $('#addContractButton').css("display", "inline-block");
+        $('#deleteProductButton').css("display", "inline-block");
+        $('#deleteContractButton').css("display", "inline-block");
+        $('#globalEditContractButton').css("display", "inline-block");
+        $('#globalEditProductButton').css("display", "inline-block");
+        $('#adminViewButton').text("Switch to Non-Admin View");
+      }
+      else
+      {
+
+      }
+    }
+  </script>
+  <h1>Product TRACkER<div id="AdminViewButton"></div></h1>
+  
+  <body onload="checkForAdmin()">
+    <div class="tabbed">
+      <div id="LoadingModal"></div>
+      <div id="AddProductModal"></div>
+      <div id="AdminViewModal"></div>
+      <div id="ProductDetailsModal"></div>
+      <div id="AddContractModal"></div>
+      <div id="EditProductModal"></div>
+      <div id="EditContractModal"></div>
+      <div id="ContractDetailsModal"></div>
+      <div id="DeleteContractModal"></div>
+      <div id="DeleteProductModal"></div>
+      <div id="GlobalEditContractModal"></div>
+      <div id="GlobalEditProductModal"></div>
+
+      <input type="radio" name="tabs" id="tab-nav-1" onclick="(window.localStorage.setItem('tab',0))" checked>
+      <label for="tab-nav-1">Products</label>
+      <input type="radio" name="tabs" id="tab-nav-2" onclick="(window.localStorage.setItem('tab',1))">
+      <label for="tab-nav-2">Contracts</label>
+      <div class="tabs">
+        <div id="ProductTable"></div>
+        <div id="ContractTable"></div>
+      </div>
+      
+    </div>
+
+  </body>
+  
+</html>

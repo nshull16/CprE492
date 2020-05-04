@@ -1,0 +1,94 @@
+.contractDetailsModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .contractDetailsModal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 700px;
+    /*height: 80%; */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .contractDetailsModal-header {
+    padding: 2px 16px;
+    background-color: #d7451a;
+    color: white;
+  }
+  
+  .contractDetailsModal-body {padding: 2px 16px;}
+  
+  .contractDetailsModal-footer {
+    padding: 2px 16px;
+    background-color: #d7451a;
+    color: white;
+  }
+  .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+
+  .contractDetailsAssociatedProducts {
+    width: 200px; /* Set a width if you like */
+    height: 120px;
+    overflow-y: scroll;
+    border: 1.2px solid #000000;
+  }
+  
+  .contractDetailsAssociatedProducts a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .contractDetailsAssociatedProducts a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+  }
+  
+  .contractDetailsAssociatedProducts a.contractDetailsAssociatedProductsActive {
+    background-color: rgb(189, 93, 48); /* Add a green color to the "active/current" link */
+    color: white;
+  }
